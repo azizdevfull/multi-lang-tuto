@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Language;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,11 +14,45 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $langs = [
+            [
+                'code' => 'en',
+                'name' => 'English',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'code' => 'fr',
+                'name' => 'Français',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'code' => 'de',
+                'name' => 'Deutsch',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'code' => 'es',
+                'name' => 'Español',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'code' => 'zh',
+                'name' => '中文',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'code' => 'it',
+                'name' => 'Italiano',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Language::insert($langs);
     }
 }
